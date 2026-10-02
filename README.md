@@ -2,7 +2,14 @@
 
 奶蛙（奶娃）小游戏导航站：打开即玩，不用下载。
 
-在线访问：https://naiwa-hub.vercel.app
+在线访问：https://naiwa.userhali.com（DNS 解析生效后）
+
+备用地址：https://naiwa-hub-halis-projects1.vercel.app
+
+## 托管说明
+
+- **本站直接托管**（MIT 协议）：奶蛙工厂 → [/games/frog-miner/](https://naiwa.userhali.com/games/frog-miner/)（游戏代码在本仓库，图片/音频素材经 jsDelivr CDN 反代，原仓库 LICENSE 保留在目录内）
+- **外链导航**：其余站点因原作者未声明开源协议（默认保留所有权利），暂只做跳转链接；获得作者授权后会陆续安排托管。
 
 ## 这是什么
 
