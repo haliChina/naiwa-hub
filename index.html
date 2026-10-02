@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="color-scheme" content="light dark" />
+  <meta name="theme-color" content="#e9f5e1" />
+  <link rel="icon" href="data:," />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&display=swap" rel="stylesheet">
+  <title>奶娃汇总站</title>
+  <style>
+    :root{
+      color-scheme:light dark;
+      --pond:#e9f5e1;--paper:#fffdf7;--ink:#5b4632;--muted:#765f49;
+      --leaf:#79bd6d;--leaf-deep:#4d8e4d;--sun:#ffd257;--pink:#ff9fb6;
+      --sky:#9ad6f2;--line:#5b4632;--soft:#d9ebcf;--shadow:rgba(91,70,50,.16);
+      --white:#fffdf7;--focus:#236f75;
+    }
+    @media(prefers-color-scheme:dark){
+      :root{--pond:#233526;--paper:#354633;--ink:#fff3d7;--muted:#e6d7b9;--leaf:#8fce7b;--leaf-deep:#b8ec9e;--sun:#f4ca5e;--pink:#f59bb2;--sky:#83c7e3;--line:#eadbbf;--soft:#2d402f;--shadow:rgba(0,0,0,.28);--white:#fffaf0;--focus:#ffd257}
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--pond);color:var(--ink);font-family:"ZCOOL KuaiLe","PingFang SC","Microsoft YaHei",sans-serif;line-height:1.55;min-height:100vh;overflow-x:hidden;background-image:radial-gradient(circle at 1px 1px,color-mix(in srgb,var(--leaf) 26%,transparent) 1.5px,transparent 0);background-size:24px 24px}
+    button,input{font:inherit}
+    button,a{ -webkit-tap-highlight-color:transparent}
+    a{color:inherit}
+    .wrap{width:min(1120px,calc(100% - 32px));margin:auto}
+    .hero{position:relative;padding:52px 0 36px;isolation:isolate}
+    .hero-grid{display:grid;grid-template-columns:minmax(0,1fr) 280px;align-items:center;gap:34px}
+    .note{display:inline-block;background:var(--sun);border:3px solid var(--line);border-radius:12px;padding:5px 12px;box-shadow:4px 4px 0 var(--shadow);transform:rotate(-1.5deg);font-size:15px;margin-bottom:18px}
+    h1{font-size:clamp(42px,7vw,78px);line-height:1.02;margin:0;letter-spacing:-.025em;max-width:760px;text-wrap:balance}
+    .hero p{font-size:clamp(17px,2.1vw,23px);margin:18px 0 0;color:var(--muted);max-width:640px}
+    .pond-scene{height:238px;position:relative}
+    .frog-big{position:absolute;width:192px;height:142px;left:42px;top:44px;background:var(--leaf);border:4px solid var(--line);border-radius:48% 52% 45% 46%;box-shadow:8px 8px 0 var(--shadow);transform:rotate(3deg)}
+    .frog-big:before,.frog-big:after{content:"";position:absolute;width:52px;height:52px;top:-27px;background:var(--leaf);border:4px solid var(--line);border-radius:50%;z-index:-1}
+    .frog-big:before{left:19px}.frog-big:after{right:19px}
+    .eye{position:absolute;width:14px;height:18px;background:var(--line);border-radius:50%;top:11px;z-index:2}
+    .eye.e1{left:43px}.eye.e2{right:43px}
+    .cheek{position:absolute;width:24px;height:12px;border-radius:50%;background:var(--pink);top:62px;opacity:.9}.cheek.c1{left:20px}.cheek.c2{right:20px}
+    .smile{position:absolute;width:56px;height:28px;border-bottom:4px solid var(--line);border-radius:50%;left:66px;top:53px}
+    .belly{position:absolute;width:91px;height:58px;background:#f4edc7;border:3px solid var(--line);border-radius:50% 50% 45% 45%;left:49px;bottom:-10px}
+    .crown{position:absolute;top:-60px;left:58px;width:77px;height:43px;background:var(--sun);border:4px solid var(--line);clip-path:polygon(0 100%,0 26%,27% 60%,47% 0,69% 60%,100% 22%,100% 100%);z-index:3}
+    .lily{position:absolute;border:3px solid var(--line);background:#99cf7b;border-radius:50% 48% 50% 42%;box-shadow:4px 4px 0 var(--shadow)}
+    .l1{width:72px;height:34px;left:3px;bottom:5px;transform:rotate(-10deg)}.l2{width:85px;height:39px;right:-5px;bottom:25px;transform:rotate(11deg)}
+    .bubble{position:absolute;border:3px solid var(--sky);border-radius:50%;animation:float 3.3s ease-in-out infinite}.b1{width:20px;height:20px;right:23px;top:17px}.b2{width:12px;height:12px;right:2px;top:57px;animation-delay:-1.2s}.b3{width:16px;height:16px;left:14px;top:34px;animation-delay:-2s}
+    @keyframes float{50%{transform:translateY(-10px)}}
+    .wave{height:32px;color:var(--paper);overflow:hidden}.wave svg{width:100%;height:100%;display:block}
+    main{background:var(--paper);padding:25px 0 68px}
+    .recommend{display:grid;grid-template-columns:auto 1fr auto;gap:16px;align-items:center;background:var(--sun);border:3px solid var(--line);box-shadow:6px 6px 0 var(--shadow);border-radius:20px 27px 18px 25px;padding:18px 22px;margin-bottom:31px;transform:rotate(-.2deg)}
+    .rec-icon{width:52px;height:52px;background:var(--pink);border:3px solid var(--line);border-radius:50% 44% 48% 43%;display:grid;place-items:center;font-size:28px;color:#5b4632}
+    .recommend strong{display:block;font-size:20px}.recommend span{color:#5b4632}.recommend a{background:var(--paper);border:3px solid var(--line);text-decoration:none;padding:9px 15px;border-radius:12px;box-shadow:3px 3px 0 rgba(91,70,50,.17);white-space:nowrap}
+    .tools{display:grid;grid-template-columns:minmax(220px,1fr) auto;gap:14px;align-items:center;margin-bottom:17px}
+    .search{position:relative}.search svg{position:absolute;left:16px;top:50%;transform:translateY(-50%);width:21px;height:21px;stroke:var(--ink)}
+    input[type=search]{width:100%;height:52px;border:3px solid var(--line);border-radius:15px;background:var(--paper);color:var(--ink);padding:0 18px 0 49px;outline:none;box-shadow:4px 4px 0 var(--shadow)}
+    input[type=search]:focus{box-shadow:0 0 0 4px color-mix(in srgb,var(--focus) 28%,transparent)}
+    input::placeholder{color:var(--muted);opacity:.8}
+    .random{height:52px;border:3px solid var(--line);border-radius:14px;background:var(--pink);color:#4e3727;padding:0 19px;box-shadow:4px 4px 0 var(--shadow);cursor:pointer}
+    .random:active,.chip:active,.play:active{transform:translate(2px,2px);box-shadow:1px 1px 0 var(--shadow)}
+    .filters{display:flex;flex-wrap:wrap;gap:9px;margin:0 0 26px}
+    .chip{border:2.5px solid var(--line);border-radius:999px;background:var(--paper);color:var(--ink);padding:7px 13px;cursor:pointer;box-shadow:2px 2px 0 var(--shadow)}
+    .chip[aria-pressed=true]{background:var(--leaf);color:#2d321f}
+    .section-head{display:flex;justify-content:space-between;align-items:end;gap:16px;margin:0 0 18px}
+    h2{font-size:31px;margin:0;line-height:1.1}.count{color:var(--muted);font-size:15px}
+    .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+    .card{--accent:var(--leaf);background:var(--paper);border:3px solid var(--line);border-radius:24px 19px 27px 21px;box-shadow:6px 6px 0 var(--shadow);padding:20px;display:flex;flex-direction:column;min-height:292px;position:relative;overflow:hidden}
+    .card:nth-child(4n+2){border-radius:18px 25px 20px 28px}.card:nth-child(4n+3){border-radius:27px 18px 25px 20px}
+    .card:before{content:"";position:absolute;width:72px;height:72px;background:color-mix(in srgb,var(--accent) 25%,transparent);border-radius:50%;right:-22px;top:-22px}
+    .card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+    .mini-frog{width:66px;height:54px;background:var(--accent);border:3px solid var(--line);border-radius:48% 52% 44% 46%;position:relative;margin-top:7px;flex:none}
+    .mini-frog:before,.mini-frog:after{content:"";position:absolute;width:21px;height:21px;top:-12px;background:inherit;border:3px solid var(--line);border-radius:50%;z-index:0}.mini-frog:before{left:5px}.mini-frog:after{right:5px}
+    .mini-frog i,.mini-frog b{position:absolute;width:6px;height:8px;background:var(--line);border-radius:50%;top:0;z-index:2}.mini-frog i{left:15px}.mini-frog b{right:15px}.mini-frog em{position:absolute;width:23px;height:11px;border-bottom:2.5px solid var(--line);border-radius:50%;left:19px;top:19px}
+    .tag{background:color-mix(in srgb,var(--accent) 45%,var(--paper));border:2px solid var(--line);padding:3px 9px;border-radius:999px;font-size:13px;color:var(--ink);white-space:nowrap}
+    .card h3{font-size:23px;margin:15px 0 6px;line-height:1.15}.desc{font-family:"PingFang SC","Microsoft YaHei",sans-serif;font-size:14px;color:var(--muted);margin:0 0 17px;flex:1;line-height:1.65}
+    .card-actions{display:grid;grid-template-columns:1fr auto;gap:9px;align-items:center}
+    .play{display:block;text-align:center;text-decoration:none;background:var(--accent);color:#2f3424;border:3px solid var(--line);border-radius:13px;padding:9px 13px;box-shadow:3px 3px 0 var(--shadow)}
+    .source{font-size:12px;color:var(--muted);text-underline-offset:3px;white-space:nowrap}
+    .empty{display:none;border:3px dashed var(--line);border-radius:20px;padding:36px;text-align:center;color:var(--muted)}
+    .side-zone{margin-top:45px;padding-top:35px;border-top:4px dashed var(--soft)}
+    .special{display:grid;grid-template-columns:180px 1fr auto;gap:22px;align-items:center;background:var(--sky);color:#3c3a2b;border:3px solid var(--line);border-radius:26px 20px 28px 18px;padding:24px;box-shadow:6px 6px 0 var(--shadow)}
+    .sticker-wall{height:110px;background:var(--paper);border:3px solid var(--line);border-radius:18px;position:relative;overflow:hidden}
+    .face{position:absolute;width:43px;height:34px;background:var(--leaf);border:2px solid var(--line);border-radius:50%;display:grid;place-items:center;color:#4b3a29;font-size:19px}.f1{left:16px;top:16px;transform:rotate(-8deg)}.f2{left:70px;top:46px;transform:rotate(7deg);background:var(--sun)}.f3{right:17px;top:18px;transform:rotate(11deg);background:var(--pink)}
+    .special h3{font-size:25px;margin:0 0 4px}.special p{margin:0;font-family:"PingFang SC","Microsoft YaHei",sans-serif;font-size:14px;line-height:1.6}
+    .special a{background:var(--paper);border:3px solid var(--line);border-radius:13px;padding:10px 16px;text-decoration:none;box-shadow:3px 3px 0 rgba(91,70,50,.17);white-space:nowrap}
+    footer{background:var(--paper);padding:0 0 54px;color:var(--muted)}
+    .footer-inner{border-top:3px solid var(--soft);padding-top:26px;display:flex;justify-content:space-between;gap:22px;font-family:"PingFang SC","Microsoft YaHei",sans-serif;font-size:13px}.footer-inner p{margin:0}.footer-inner strong{font-family:"ZCOOL KuaiLe";color:var(--ink);font-size:16px}
+    :focus-visible{outline:4px solid var(--focus);outline-offset:3px}
+    @media(max-width:820px){.hero-grid{grid-template-columns:1fr 210px}.pond-scene{transform:scale(.82);transform-origin:center right}.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.special{grid-template-columns:150px 1fr}.special a{grid-column:2;justify-self:start}}
+    @media(max-width:620px){.wrap{width:min(100% - 24px,520px)}.hero{padding:34px 0 22px}.hero-grid{grid-template-columns:1fr}.hero p{font-size:17px}.pond-scene{height:176px;width:250px;justify-self:center;transform:scale(.77);transform-origin:top center;margin-bottom:-28px}.recommend{grid-template-columns:auto 1fr;padding:15px}.recommend a{grid-column:1/-1;text-align:center}.tools{grid-template-columns:1fr}.random{width:100%}.grid{grid-template-columns:1fr}.card{min-height:260px}.section-head{align-items:center}.special{grid-template-columns:1fr;padding:18px}.sticker-wall{width:100%;height:96px}.special a{grid-column:1;width:100%;text-align:center}.footer-inner{display:block}.footer-inner p+p{margin-top:12px}}
+    @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}.bubble{animation:none}}
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="note">找到 11 款小游戏 + 1 个周边小站</span>
+        <h1>今天，想玩哪只奶蛙？</h1>
+        <p>从挖矿、快跑到跳一跳，把散落在 GitHub 和网页角落的小窝，收进一张软乎乎的游玩地图。</p>
+      </div>
+      <div class="pond-scene" aria-hidden="true">
+        <span class="bubble b1"></span><span class="bubble b2"></span><span class="bubble b3"></span>
+        <span class="lily l1"></span><span class="lily l2"></span>
+        <div class="frog-big"><span class="crown"></span><i class="eye e1"></i><i class="eye e2"></i><i class="cheek c1"></i><i class="cheek c2"></i><span class="smile"></span><span class="belly"></span></div>
+      </div>
+    </div>
+  </header>
+  <div class="wave" aria-hidden="true"><svg viewBox="0 0 1440 90" preserveAspectRatio="none"><path fill="currentColor" d="M0,45 C160,94 290,4 470,41 C650,80 780,10 970,43 C1160,76 1300,14 1440,39 L1440,90 L0,90 Z"/></svg></div>
+  <main>
+    <div class="wrap">
+      <section class="recommend" aria-label="今日推荐">
+        <div class="rec-icon" aria-hidden="true">★</div>
+        <div><strong>今天先玩：<span id="recName"></span></strong><span id="recDesc"></span></div>
+        <a id="recLink" href="#" target="_blank" rel="noopener noreferrer">去看看 →</a>
+      </section>
+
+      <div class="tools">
+        <label class="search"><span class="sr-only"></span><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke-width="2.5"><circle cx="11" cy="11" r="7"></circle><path d="m16.5 16.5 4 4"></path></svg><input id="search" type="search" placeholder="搜一搜：快跑、合成、消消乐…" aria-label="搜索游戏"></label>
+        <button class="random" id="randomBtn" type="button">摇一摇，随机玩</button>
+      </div>
+      <nav class="filters" aria-label="游戏分类" id="filters"></nav>
+
+      <div class="section-head"><h2>奶蛙游戏池</h2><span class="count" id="count"></span></div>
+      <section class="grid" id="gameGrid" aria-live="polite"></section>
+      <div class="empty" id="empty">这片荷叶底下没找到游戏，换个词试试吧。</div>
+
+      <section class="side-zone">
+        <div class="section-head"><h2>周边小站</h2><span class="count">不是游戏，也值得逛</span></div>
+        <article class="special">
+          <div class="sticker-wall" aria-hidden="true"><span class="face f1">⌣</span><span class="face f2">•ᴗ•</span><span class="face f3">ᵔᴗᵔ</span></div>
+          <div><h3>奶蛙宇宙</h3><p>GitHub 新发现的表情包周边站，收录 63 个奶蛙表情包素材。</p></div>
+          <a href="https://wencuecryforme.github.io/NaiWa-Universe/" target="_blank" rel="noopener noreferrer">去逛逛 →</a>
+        </article>
+      </section>
+    </div>
+  </main>
+  <footer><div class="wrap footer-inner"><p><strong>游戏都住在各自的小窝里。</strong><br>本站只是导航入口，点击后会在新页面打开原站。</p><p>清单整理于 2026-10-02 · 6 款来自原始清单，另从 GitHub 找到 6 个相关项目。</p></div></footer>
+
+  <script>
+    (function(){
+      var games=[
+        {name:'奶蛙工厂',cat:'模拟经营',desc:'挖矿攒金币的模拟经营玩法。',url:'https://66970010-boop.github.io/frog-miner/',found:'原始清单',color:'#7cc46f'},
+        {name:'奶蛙快跑',cat:'跑酷',desc:'页面显示“7.0 更新筹备中”的跑酷小窝。',url:'https://naiwa-kuaipao.pages.dev/',found:'原始清单',color:'#ffd257'},
+        {name:'奶蛙的小窝',cat:'养成',desc:'标题为“奶娃的小窝 · 随身陪伴”的温馨养成页。',url:'https://naiwaxiaowu.pages.dev/',found:'原始清单',color:'#ff9fb6'},
+        {name:'奶蛙街舞',cat:'音乐',desc:'标题为“奶娃街舞 · Dance Baby”的音乐节奏小站。',url:'https://nailong-dance.pages.dev',found:'原始清单',color:'#9ad6f2'},
+        {name:'奶蛙消消乐',cat:'消除',desc:'三消消除类奶蛙小游戏。',url:'https://chenckx0614.github.io/naiwaxxl/',found:'原始清单',color:'#ff9fb6'},
+        {name:'合成大奶蛙',cat:'合成',desc:'一步步合成，直到第十级。',url:'https://yhsome.github.io/BigNaiWa/',found:'原始清单',color:'#ffd257'},
+        {name:'奶蛙2048',cat:'合成',desc:'与“合成大奶蛙”同作者的 2048 合成玩法。',url:'https://yhsome.github.io/Nai2048/',found:'GitHub 新发现',color:'#9ad6f2'},
+        {name:'奶蛙小游戏合集',cat:'合集',desc:'内含打奶蛙、奶了个奶、奶蛙消消乐、奶蛙跳一跳。',url:'https://allenllii.github.io/naiwa-games/',found:'GitHub 新发现',color:'#7cc46f'},
+        {name:'奶蛙一跳',cat:'跳跃',desc:'GitHub 上找到的奶蛙跳跃小游戏。',url:'https://sn2333.github.io/naiwa-jump/',found:'GitHub 新发现',color:'#ffd257'},
+        {name:'奶蛙跑酷',cat:'跑酷',desc:'GitHub 上找到的另一款奶蛙跑酷小游戏。',url:'https://qwer54188g-spec.github.io/naiwa-parkour/',found:'GitHub 新发现',color:'#9ad6f2'},
+        {name:'奶蛙吃奶蛙',cat:'动作',desc:'适合手机网页游玩的动作小游戏。',url:'https://wangc566.github.io/naiwa/',found:'GitHub 新发现',color:'#ff9fb6'}
+      ];
+      var categories=['全部','跑酷','合成','消除','养成','音乐','模拟经营','动作','跳跃','合集'];
+      var active='全部';
+      var query='';
+      var grid=document.getElementById('gameGrid');
+      var filters=document.getElementById('filters');
+      var empty=document.getElementById('empty');
+      var count=document.getElementById('count');
+      function safeText(s){return String(s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
+      function card(g){return '<article class="card" style="--accent:'+g.color+'"><div class="card-top"><div class="mini-frog" aria-hidden="true"><i></i><b></b><em></em></div><span class="tag">'+safeText(g.cat)+'</span></div><h3>'+safeText(g.name)+'</h3><p class="desc">'+safeText(g.desc)+'</p><div class="card-actions"><a class="play" href="'+g.url+'" target="_blank" rel="noopener noreferrer" aria-label="打开'+safeText(g.name)+'">开玩 →</a><a class="source" href="'+g.url+'" target="_blank" rel="noopener noreferrer" title="打开来源站点">'+safeText(g.found)+'</a></div></article>'}
+      function visible(){return games.filter(function(g){var hit=!query||g.name.indexOf(query)>-1||g.cat.indexOf(query)>-1||g.desc.indexOf(query)>-1;return hit&&(active==='全部'||g.cat===active)})}
+      function render(){var list=visible();grid.innerHTML=list.map(card).join('');count.textContent='找到 '+list.length+' 款';empty.style.display=list.length?'none':'block'}
+      categories.forEach(function(cat){var b=document.createElement('button');b.type='button';b.className='chip';b.textContent=cat;b.setAttribute('aria-pressed',cat===active?'true':'false');b.addEventListener('click',function(){active=cat;Array.prototype.forEach.call(filters.children,function(x){x.setAttribute('aria-pressed',x===b?'true':'false')});render()});filters.appendChild(b)});
+      document.getElementById('search').addEventListener('input',function(e){query=e.target.value.trim();render()});
+      document.getElementById('randomBtn').addEventListener('click',function(){var list=visible();if(!list.length)return;var g=list[Math.floor(Math.random()*list.length)];window.open(g.url,'_blank','noopener,noreferrer')});
+      var day=Math.floor(Date.now()/86400000);var rec=games[((day%games.length)+games.length)%games.length];document.getElementById('recName').textContent=rec.name;document.getElementById('recDesc').textContent=rec.desc;document.getElementById('recLink').href=rec.url;
+      render();
+    })();
+  </script>
+</body>
+</html>
