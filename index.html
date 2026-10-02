@@ -72,7 +72,7 @@
     .mini-frog{width:66px;height:54px;background:var(--accent);border:3px solid var(--line);border-radius:48% 52% 44% 46%;position:relative;margin-top:7px;flex:none}
     .mini-frog:before,.mini-frog:after{content:"";position:absolute;width:21px;height:21px;top:-12px;background:inherit;border:3px solid var(--line);border-radius:50%;z-index:0}.mini-frog:before{left:5px}.mini-frog:after{right:5px}
     .mini-frog i,.mini-frog b{position:absolute;width:6px;height:8px;background:var(--line);border-radius:50%;top:0;z-index:2}.mini-frog i{left:15px}.mini-frog b{right:15px}.mini-frog em{position:absolute;width:23px;height:11px;border-bottom:2.5px solid var(--line);border-radius:50%;left:19px;top:19px}
-    .tag{background:color-mix(in srgb,var(--accent) 45%,var(--paper));border:2px solid var(--line);padding:3px 9px;border-radius:999px;font-size:13px;color:var(--ink);white-space:nowrap}
+    .tag{background:color-mix(in srgb,var(--accent) 45%,var(--paper));border:2px solid var(--line);padding:3px 9px;border-radius:999px;font-size:13px;color:var(--ink);white-space:nowrap}.hosted{background:var(--leaf);border:2px solid var(--line);padding:3px 9px;border-radius:999px;font-size:13px;color:#fff;white-space:nowrap;margin-left:6px}
     .card h3{font-size:23px;margin:15px 0 6px;line-height:1.15}.desc{font-family:"PingFang SC","Microsoft YaHei",sans-serif;font-size:14px;color:var(--muted);margin:0 0 17px;flex:1;line-height:1.65}
     .card-actions{display:grid;grid-template-columns:1fr auto;gap:9px;align-items:center}
     .play{display:block;text-align:center;text-decoration:none;background:var(--accent);color:#2f3424;border:3px solid var(--line);border-radius:13px;padding:9px 13px;box-shadow:3px 3px 0 var(--shadow)}
@@ -141,17 +141,17 @@
   <script>
     (function(){
       var games=[
-        {name:'奶蛙工厂',cat:'模拟经营',desc:'挖矿攒金币的模拟经营玩法。',url:'games/frog-miner/',found:'本站托管 · MIT',color:'#7cc46f'},
-        {name:'奶蛙快跑',cat:'跑酷',desc:'页面显示“7.0 更新筹备中”的跑酷小窝。',url:'https://naiwa-kuaipao.pages.dev/',found:'原始清单',color:'#ffd257'},
-        {name:'奶蛙的小窝',cat:'养成',desc:'标题为“奶娃的小窝 · 随身陪伴”的温馨养成页。',url:'https://naiwaxiaowu.pages.dev/',found:'原始清单',color:'#ff9fb6'},
-        {name:'奶蛙街舞',cat:'音乐',desc:'标题为“奶娃街舞 · Dance Baby”的音乐节奏小站。',url:'https://nailong-dance.pages.dev',found:'原始清单',color:'#9ad6f2'},
-        {name:'奶蛙消消乐',cat:'消除',desc:'三消消除类奶蛙小游戏。',url:'https://chenckx0614.github.io/naiwaxxl/',found:'原始清单',color:'#ff9fb6'},
-        {name:'合成大奶蛙',cat:'合成',desc:'一步步合成，直到第十级。',url:'https://yhsome.github.io/BigNaiWa/',found:'原始清单',color:'#ffd257'},
-        {name:'奶蛙2048',cat:'合成',desc:'与“合成大奶蛙”同作者的 2048 合成玩法。',url:'https://yhsome.github.io/Nai2048/',found:'GitHub 新发现',color:'#9ad6f2'},
-        {name:'奶蛙小游戏合集',cat:'合集',desc:'内含打奶蛙、奶了个奶、奶蛙消消乐、奶蛙跳一跳。',url:'https://allenllii.github.io/naiwa-games/',found:'GitHub 新发现',color:'#7cc46f'},
-        {name:'奶蛙一跳',cat:'跳跃',desc:'GitHub 上找到的奶蛙跳跃小游戏。',url:'https://sn2333.github.io/naiwa-jump/',found:'GitHub 新发现',color:'#ffd257'},
-        {name:'奶蛙跑酷',cat:'跑酷',desc:'GitHub 上找到的另一款奶蛙跑酷小游戏。',url:'https://qwer54188g-spec.github.io/naiwa-parkour/',found:'GitHub 新发现',color:'#9ad6f2'},
-        {name:'奶蛙吃奶蛙',cat:'动作',desc:'适合手机网页游玩的动作小游戏。',url:'https://wangc566.github.io/naiwa/',found:'GitHub 新发现',color:'#ff9fb6'}
+        {name:'奶蛙工厂',cat:'模拟经营',desc:'挖矿攒金币的模拟经营玩法。',url:'games/frog-miner/',origin:'https://66970010-boop.github.io/frog-miner/',hosted:1,found:'本站托管 · MIT',color:'#7cc46f'},
+        {name:'奶蛙快跑',cat:'跑酷',desc:'页面显示“7.0 更新筹备中”的跑酷小窝。',url:'games/kuaipao/',origin:'https://naiwa-kuaipao.pages.dev/',hosted:1,found:'本站托管',color:'#ffd257'},
+        {name:'奶蛙的小窝',cat:'养成',desc:'标题为“奶娃的小窝 · 随身陪伴”的温馨养成页。',url:'games/xiaowo/',origin:'https://naiwaxiaowu.pages.dev/',hosted:1,found:'本站托管',color:'#ff9fb6'},
+        {name:'奶蛙街舞',cat:'音乐',desc:'标题为“奶娃街舞 · Dance Baby”的音乐节奏小站。',url:'games/jiewu/',origin:'https://nailong-dance.pages.dev',hosted:1,found:'本站托管',color:'#9ad6f2'},
+        {name:'奶蛙消消乐',cat:'消除',desc:'三消消除类奶蛙小游戏。',url:'games/xiaoxiaole/',origin:'https://chenckx0614.github.io/naiwaxxl/',hosted:1,found:'本站托管',color:'#ff9fb6'},
+        {name:'合成大奶蛙',cat:'合成',desc:'一步步合成，直到第十级。',url:'games/hecheng/',origin:'https://yhsome.github.io/BigNaiWa/',hosted:1,found:'本站托管',color:'#ffd257'},
+        {name:'奶蛙2048',cat:'合成',desc:'与“合成大奶蛙”同作者的 2048 合成玩法。',url:'games/2048/',origin:'https://yhsome.github.io/Nai2048/',hosted:1,found:'本站托管',color:'#9ad6f2'},
+        {name:'奶蛙小游戏合集',cat:'合集',desc:'内含打奶蛙、奶了个奶、奶蛙消消乐、奶蛙跳一跳。',url:'games/collection/',origin:'https://allenllii.github.io/naiwa-games/',hosted:1,found:'本站托管',color:'#7cc46f'},
+        {name:'奶蛙一跳',cat:'跳跃',desc:'GitHub 上找到的奶蛙跳跃小游戏。',url:'games/yitiao/',origin:'https://sn2333.github.io/naiwa-jump/',hosted:1,found:'本站托管',color:'#ffd257'},
+        {name:'奶蛙跑酷',cat:'跑酷',desc:'GitHub 上找到的另一款奶蛙跑酷小游戏。',url:'games/paoku/',origin:'https://qwer54188g-spec.github.io/naiwa-parkour/',hosted:1,found:'本站托管',color:'#9ad6f2'},
+        {name:'奶蛙吃奶蛙',cat:'动作',desc:'适合手机网页游玩的动作小游戏。',url:'games/eat/',origin:'https://wangc566.github.io/naiwa/',hosted:1,found:'本站托管',color:'#ff9fb6'}
       ];
       var categories=['全部','跑酷','合成','消除','养成','音乐','模拟经营','动作','跳跃','合集'];
       var active='全部';
@@ -161,7 +161,7 @@
       var empty=document.getElementById('empty');
       var count=document.getElementById('count');
       function safeText(s){return String(s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
-      function card(g){return '<article class="card" style="--accent:'+g.color+'"><div class="card-top"><div class="mini-frog" aria-hidden="true"><i></i><b></b><em></em></div><span class="tag">'+safeText(g.cat)+'</span></div><h3>'+safeText(g.name)+'</h3><p class="desc">'+safeText(g.desc)+'</p><div class="card-actions"><a class="play" href="'+g.url+'" target="_blank" rel="noopener noreferrer" aria-label="打开'+safeText(g.name)+'">开玩 →</a><a class="source" href="'+g.url+'" target="_blank" rel="noopener noreferrer" title="打开来源站点">'+safeText(g.found)+'</a></div></article>'}
+      function card(g){return '<article class="card" style="--accent:'+g.color+'"><div class="card-top"><div class="mini-frog" aria-hidden="true"><i></i><b></b><em></em></div><span class="tag">'+safeText(g.cat)+'</span>'+(g.hosted?'<span class="hosted">本站托管</span>':'')+'</div><h3>'+safeText(g.name)+'</h3><p class="desc">'+safeText(g.desc)+'</p><div class="card-actions"><a class="play" href="'+g.url+'" target="_blank" rel="noopener noreferrer" aria-label="打开'+safeText(g.name)+'">开玩 →</a><a class="source" href="'+(g.origin||g.url)+'" target="_blank" rel="noopener noreferrer" title="原作者发布页（标注原处）">原站 ↗</a></div></article>'}
       function visible(){return games.filter(function(g){var hit=!query||g.name.indexOf(query)>-1||g.cat.indexOf(query)>-1||g.desc.indexOf(query)>-1;return hit&&(active==='全部'||g.cat===active)})}
       function render(){var list=visible();grid.innerHTML=list.map(card).join('');count.textContent='找到 '+list.length+' 款';empty.style.display=list.length?'none':'block'}
       categories.forEach(function(cat){var b=document.createElement('button');b.type='button';b.className='chip';b.textContent=cat;b.setAttribute('aria-pressed',cat===active?'true':'false');b.addEventListener('click',function(){active=cat;Array.prototype.forEach.call(filters.children,function(x){x.setAttribute('aria-pressed',x===b?'true':'false')});render()});filters.appendChild(b)});

@@ -8,8 +8,24 @@
 
 ## 托管说明
 
-- **本站直接托管**（MIT 协议）：奶蛙工厂 → [/games/frog-miner/](https://naiwa.userhali.com/games/frog-miner/)（游戏代码在本仓库，图片/音频素材经 jsDelivr CDN 反代，原仓库 LICENSE 保留在目录内）
-- **外链导航**：其余站点因原作者未声明开源协议（默认保留所有权利），暂只做跳转链接；获得作者授权后会陆续安排托管。
+本站对收录的 11 款游戏做**本站托管**（原站链接在每张卡片上标注为"原站 ↗"）：
+
+| 游戏 | 本站地址 | 托管方式 | 原站 |
+|------|----------|----------|------|
+| 奶蛙工厂 | /games/frog-miner/ | 代码进仓库，素材经 jsDelivr CDN 反代 | 66970010-boop/frog-miner（MIT） |
+| 奶蛙消消乐 | /games/xiaoxiaole/ | 经 jsDelivr CDN 反代原仓库 | chenckx0614/naiwaxxl |
+| 合成大奶蛙 | /games/hecheng/ | 经 jsDelivr CDN 反代原仓库 | yhsome/BigNaiWa |
+| 奶蛙2048 | /games/2048/ | 经 jsDelivr CDN 反代原仓库 | yhsome/Nai2048 |
+| 奶蛙小游戏合集 | /games/collection/ | 经 jsDelivr CDN 反代原仓库 | Allenllii/naiwa-games |
+| 奶蛙一跳 | /games/yitiao/ | 经 jsDelivr CDN 反代原仓库 | Sn2333/naiwa-jump |
+| 奶蛙跑酷 | /games/paoku/ | 经 jsDelivr CDN 反代原仓库构建产物 | qwer54188g-spec/naiwa-parkour |
+| 奶蛙吃奶蛙 | /games/eat/ | 经 jsDelivr CDN 反代原仓库 | wangc566/naiwa |
+| 奶蛙快跑 | /games/kuaipao/ | 反向代理原站（无公开源码仓库） | naiwa-kuaipao.pages.dev |
+| 奶蛙的小窝 | /games/xiaowo/ | 反向代理原站（无公开源码仓库） | naiwaxiaowu.pages.dev |
+| 奶蛙街舞 | /games/jiewu/ | 反向代理原站（无公开源码仓库） | nailong-dance.pages.dev |
+
+- 奶蛙宇宙（表情包周边站）暂保持外链：https://wencuecryforme.github.io/NaiWa-Universe/
+- 所有游戏内容版权归原作者所有，本站标注原处；如权利人要求调整或下架，请提 Issue，会第一时间处理。
 
 ## 这是什么
 
