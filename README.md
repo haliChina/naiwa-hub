@@ -13,13 +13,13 @@
 | 游戏 | 本站地址 | 托管方式 | 原站 |
 |------|----------|----------|------|
 | 奶蛙工厂 | /games/frog-miner/ | 代码进仓库，素材经 jsDelivr CDN 反代 | 66970010-boop/frog-miner（MIT） |
-| 奶蛙消消乐 | /games/xiaoxiaole/ | 经 jsDelivr CDN 反代原仓库 | chenckx0614/naiwaxxl |
-| 合成大奶蛙 | /games/hecheng/ | 经 jsDelivr CDN 反代原仓库 | yhsome/BigNaiWa |
-| 奶蛙2048 | /games/2048/ | 经 jsDelivr CDN 反代原仓库 | yhsome/Nai2048 |
-| 奶蛙小游戏合集 | /games/collection/ | 经 jsDelivr CDN 反代原仓库 | Allenllii/naiwa-games |
-| 奶蛙一跳 | /games/yitiao/ | 经 jsDelivr CDN 反代原仓库 | Sn2333/naiwa-jump |
-| 奶蛙跑酷 | /games/paoku/ | 经 jsDelivr CDN 反代原仓库构建产物 | qwer54188g-spec/naiwa-parkour |
-| 奶蛙吃奶蛙 | /games/eat/ | 经 jsDelivr CDN 反代原仓库 | wangc566/naiwa |
+| 奶蛙消消乐 | /games/xiaoxiaole/ | 反代原作者的 GitHub Pages 站点 | chenckx0614/naiwaxxl |
+| 合成大奶蛙 | /games/hecheng/ | 反代原作者的 GitHub Pages 站点 | yhsome/BigNaiWa |
+| 奶蛙2048 | /games/2048/ | 反代原作者的 GitHub Pages 站点 | yhsome/Nai2048 |
+| 奶蛙小游戏合集 | /games/collection/ | 反代原作者的 GitHub Pages 站点 | Allenllii/naiwa-games |
+| 奶蛙一跳 | /games/yitiao/ | 反代原作者的 GitHub Pages 站点 | Sn2333/naiwa-jump |
+| 奶蛙跑酷 | /games/paoku/ | 反代原作者的 GitHub Pages 站点构建产物 | qwer54188g-spec/naiwa-parkour |
+| 奶蛙吃奶蛙 | /games/eat/ | 反代原作者的 GitHub Pages 站点 | wangc566/naiwa |
 | 奶蛙快跑 | /games/kuaipao/ | 反向代理原站（无公开源码仓库） | naiwa-kuaipao.pages.dev |
 | 奶蛙的小窝 | /games/xiaowo/ | 反向代理原站（无公开源码仓库） | naiwaxiaowu.pages.dev |
 | 奶蛙街舞 | /games/jiewu/ | 反向代理原站（无公开源码仓库） | nailong-dance.pages.dev |
