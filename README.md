@@ -2,7 +2,7 @@
 
 奶蛙（奶娃）小游戏导航站：打开即玩，不用下载。
 
-在线访问：https://naiwa.userhali.com（DNS 解析生效后）
+在线访问：https://naiwa.userhali.com （DNS 解析生效后）
 
 备用地址：https://naiwa-hub-halis-projects1.vercel.app
 
